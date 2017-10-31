@@ -11,8 +11,8 @@ Protect your wp-login.php page with HTTP Digest Authentication without the need 
 
 == Description ==
 
-This plugin adds an additional layer of protection for the **wp-login.php** page using [HTTP Digest Authentication](http://en.wikipedia.org/wiki/Digest_access_authentication) with the PHP [header()](http://php.net/header) function.  
-So it doesn't require configuring web server files like *.htaccess* or [*.htdigest*](http://websistent.com/tools/htdigest-generator-tool/) and works on all web hosting environments.  
+This plugin adds an additional layer of protection for the **wp-login.php** page using [HTTP Digest Authentication](https://en.wikipedia.org/wiki/Digest_access_authentication) with the PHP [header()](https://php.net/header) function.  
+So it doesn't require configuring web server files like *.htaccess* or [*.htdigest*](https://websistent.com/tools/htdigest-generator-tool/) and works on all web hosting environments.  
 
 **Important:** If you already have a plugin which does HTTP Authentication please deactivate it before activating this plugin. Similarly if you have configured your web server to do HTTP authentication on the wp-login.php file please remove it before using this plugin.
 
@@ -24,13 +24,13 @@ If you are using FastCGI PHP this plugin may keep prompting for the credentials 
 
 = Advantages of HTTP Digest Authentication =
 
-* Digest Authentication is very much safer than HTTP Basic Authentication whose credentials can be easily decoded with a [base64 decoder](http://www.base64decode.org/).
-* From Wikipedia on [HTTP Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication):
+* Digest Authentication is very much safer than HTTP Basic Authentication whose credentials can be easily decoded with a [base64 decoder](https://www.base64decode.org/).
+* From Wikipedia on [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication):
 
 >*The BA (Basic Authentication) mechanism provides no confidentiality protection for the transmitted credentials. They are merely encoded with BASE64 in transit, but not encrypted or hashed in any way.*
 
-* Digest Authentication on the other hand uses [MD5](http://websistent.com/tools/md5-encryption-tool/) on the credentials making it "one way" 
-* Uses server and client [nonce](http://en.wikipedia.org/wiki/Cryptographic_nonce)s to prevent replay attacks
+* Digest Authentication on the other hand uses [MD5](https://websistent.com/tools/md5-encryption-tool/) on the credentials making it "one way" 
+* Uses server and client [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce)s to prevent replay attacks
 
 = Features of the HTTP Digest Auth plugin =
 
@@ -54,7 +54,7 @@ This can be changed from **Users > Your Profile**.
 * English
 * Serbo-Croatian by [Borisa Djuraskovic](http://www.webhostinghub.com/)
 
-The [HTTP Digest Authentication Plugin](http://websistent.com/wordpress-plugins/http-digest-authentication/) official homepage.
+The [HTTP Digest Authentication Plugin](https://websistent.com/wordpress-plugins/http-digest-authentication/) official homepage.
 
 == Installation ==
 1. Unzip and upload the `http-digest-auth` folder to the `/wp-content/plugins/` directory.
@@ -69,7 +69,7 @@ When you access the *wp-login.php* page a portion of the realm is generated and 
 When you logout of WordPress this session variable is deleted and a new realm is generated, hence the browser prompts you for credentials.
 
 = How are the HTTP Digest credentials stored? =
-The username is stored in the `wp_usermeta` table in plain-text. The password is stored in a two-way encryption format in the same table. It is encrypted and decrypted with the [mcrypt_encrypt()](http://php.net/mcrypt_encrypt) and [mcrypt_decrypt()](http://php.net/mcrypt_decrypt) functions.
+The username is stored in the `wp_usermeta` table in plain-text. The password is stored in a two-way encryption format in the same table. It is encrypted and decrypted with the [mcrypt_encrypt()](https://php.net/mcrypt_encrypt) and [mcrypt_decrypt()](https://php.net/mcrypt_decrypt) functions.
 
 = But I saw the plain-text password in my database =
 That means your PHP installation doesn't have the mcrypt extension. To check if this is the case go to your `<?php phpinfo(); ?>` and check if there is a section called mcrypt. If there isn't one in your VPS/Dedicated server install it
